@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it using these metadata."
+title: "ruri-coreml"
+type: software
+authors:
+  - family-names: Nakatsugawa
+    given-names: Masahiro
+    orcid: "https://orcid.org/0009-0000-3224-0103"
+abstract: >-
+  ruri-v3 (Japanese sentence embeddings, Nagoya University) converted to Core ML for iOS and
+  compared against Apple's on-device NLContextualEmbedding, with conversion scripts, a
+  verification report and a demo app.
+repository-code: "https://github.com/masahiroid/ruri-coreml"
+license: Apache-2.0
+keywords:
+  - core-ml
+  - ios
+  - japanese
+  - sentence-embeddings
+  - ruri
+  - on-device

@@ -1,0 +1,27 @@
+{
+  "title": "ruri-coreml",
+  "upload_type": "software",
+  "description": "ruri-v3 (Japanese sentence embeddings, Nagoya University) converted to Core ML for iOS and compared against Apple's on-device NLContextualEmbedding, with conversion scripts, a verification report and a demo app.",
+  "creators": [
+    {
+      "name": "Nakatsugawa, Masahiro",
+      "orcid": "0009-0000-3224-0103"
+    }
+  ],
+  "license": "apache-2.0",
+  "keywords": [
+    "core-ml",
+    "ios",
+    "japanese",
+    "sentence-embeddings",
+    "ruri",
+    "on-device"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/masahiroid/ruri-coreml",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
