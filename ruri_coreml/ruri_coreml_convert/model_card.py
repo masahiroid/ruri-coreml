@@ -49,7 +49,7 @@ pipeline_tag: sentence-similarity
 - **iPhone 17 Pro 実機(iOS 27)**: ruri-v3-130m の seq128 fp16版・int8版がともに GPU/Neural Engine(`computeUnits = .all`)で動作。定常状態の推論は1文あたり約5ms(Apple標準の `NLContextualEmbedding` は約9〜10ms)。fp16版とint8版の類似度スコア差は最大0.0042で、検索結果の順位はほぼ同一。
 - **Mac(coremltools)**: 全ファイルでオリジナル(PyTorch)出力とのコサイン類似度0.9998以上を確認。
 
-詳しい検証結果は [REPORT.md](https://github.com/masahirocom/ruri-coreml/blob/main/REPORT.md) を参照してください。
+詳しい検証結果は [REPORT.md](https://github.com/masahiroid/ruri-coreml/blob/main/REPORT.md) を参照してください。
 
 ## プレフィックスについて(重要)
 
@@ -62,7 +62,7 @@ ruri-v3 は "1+3 prefix scheme" を採用しているため、埋め込み対象
 
 ## Swift (Core ML) での使用例
 
-ダウンロードしたモデルをXcodeプロジェクトに追加する手順・完全な実装例は [MANUAL.md](https://github.com/masahirocom/ruri-coreml/blob/main/RuriDemo/MANUAL.md) を参照してください。
+ダウンロードしたモデルをXcodeプロジェクトに追加する手順・完全な実装例は [MANUAL.md](https://github.com/masahiroid/ruri-coreml/blob/main/RuriDemo/MANUAL.md) を参照してください。
 
 ```swift
 import CoreML
@@ -111,7 +111,7 @@ print(output["sentence_embedding"].shape)  # (1, {hidden_dimension})
 
 ## 変換方法(再現手順)
 
-このリポジトリのモデルは [ruri_coreml_convert](https://github.com/masahirocom/ruri-coreml/tree/main/ruri_coreml/ruri_coreml_convert) 変換ツールで生成されています。手順の概要:
+このリポジトリのモデルは [ruri_coreml_convert](https://github.com/masahiroid/ruri-coreml/tree/main/ruri_coreml/ruri_coreml_convert) 変換ツールで生成されています。手順の概要:
 
 1. `transformers` の `AutoModel` で ModernBERT ベースの ruri-v3 をロード
 2. mean pooling + L2 normalize を行う `nn.Module` でラップ

@@ -18,7 +18,7 @@ Apple側の強みは、追加のモデルバンドルや実装コストなしに
 
 | モデル | 実体 | 実行環境 | 備考 |
 |---|---|---|---|
-| **ruri-v3-130m** | [cl-nagoya/ruri-v3-130m](https://huggingface.co/cl-nagoya/ruri-v3-130m)(ModernBERT-Jaベース、132Mパラメータ、隠れ層512次元) | Core ML(fp16、およびそのint8重み量子化版) | 自作のPyTorch→Core ML変換パイプラインを使用([masahirocom/ruri-coreml](https://github.com/masahirocom/ruri-coreml)) |
+| **ruri-v3-130m** | [cl-nagoya/ruri-v3-130m](https://huggingface.co/cl-nagoya/ruri-v3-130m)(ModernBERT-Jaベース、132Mパラメータ、隠れ層512次元) | Core ML(fp16、およびそのint8重み量子化版) | 自作のPyTorch→Core ML変換パイプラインを使用([masahiroid/ruri-coreml](https://github.com/masahiroid/ruri-coreml)) |
 | **Apple(日本語)** | `NLContextualEmbedding(language: .japanese)` | iOS 27標準搭載(Natural Language framework) | CJKスクリプトモデル、512次元 |
 | **Apple(英語)** | `NLContextualEmbedding(language: .english)` | 同上 | Latinスクリプトモデル |
 
@@ -42,7 +42,7 @@ Apple側は言語ごとに別モデルのため、日本語モデルは日本語
 
 意味的類似度の比較はiPhone 17 Pro実機上で実施(Xcodeビルド、iOS 27)。推論速度の実測値も同実機上でアプリのログ出力を介して取得した(詳細は§2.4)。
 
-検証に使ったiOSアプリ **[RuriDemo](https://github.com/masahirocom/ruri-coreml/tree/main/RuriDemo)** はGitHubで公開している。Hugging Faceからモデルをダウンロードしてビルドすれば、本レポートと同じクエリ・文書で同じ実験を実機で再現できる(類似度スコアと推論時間はXcodeのコンソールに出力される)。手順は [RuriDemo/MANUAL.md](https://github.com/masahirocom/ruri-coreml/blob/main/RuriDemo/MANUAL.md) を参照。
+検証に使ったiOSアプリ **[RuriDemo](https://github.com/masahiroid/ruri-coreml/tree/main/RuriDemo)** はGitHubで公開している。Hugging Faceからモデルをダウンロードしてビルドすれば、本レポートと同じクエリ・文書で同じ実験を実機で再現できる(類似度スコアと推論時間はXcodeのコンソールに出力される)。手順は [RuriDemo/MANUAL.md](https://github.com/masahiroid/ruri-coreml/blob/main/RuriDemo/MANUAL.md) を参照。
 
 ## 2. 結果
 
@@ -239,6 +239,6 @@ ruri-v3は「検索クエリ」/「検索文書」という役割プレフィッ
 | 19 | 英語・無関係 | en | The quarterly earnings report showed a 12% increase in revenue. |
 | 20† | ランダム文字列(無関係) | — | xqz 42 %%% asdlkj ---- 9284 |
 
-文書1〜19は [RuriDemo](https://github.com/masahirocom/ruri-coreml/tree/main/RuriDemo) の [`RuriDemo/SampleData/MoonNostalgiaDataset.swift`](https://github.com/masahirocom/ruri-coreml/blob/main/RuriDemo/RuriDemo/SampleData/MoonNostalgiaDataset.swift) にSwiftの構造体として定義されており、実機アプリで再実行して結果を再現できる。
+文書1〜19は [RuriDemo](https://github.com/masahiroid/ruri-coreml/tree/main/RuriDemo) の [`RuriDemo/SampleData/MoonNostalgiaDataset.swift`](https://github.com/masahiroid/ruri-coreml/blob/main/RuriDemo/RuriDemo/SampleData/MoonNostalgiaDataset.swift) にSwiftの構造体として定義されており、実機アプリで再実行して結果を再現できる。
 
 古典文書(4〜7、13〜14)の出典: 松尾芭蕉の句(4)、『百人一首』第五十七番・紫式部(5)、『徒然草』第百三十七段冒頭(6、口語訳ではなく原文の抜粋)、『竹取物語』かぐや姫の場面の要約的言い換え(7、原文の逐語引用ではない)、13・14は本検証のために著者が古文体を模して作成した創作文(原典からの引用ではない)。
