@@ -1,5 +1,7 @@
 # ruri-coreml
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23122809.svg)](https://doi.org/10.5281/zenodo.23122809)
+
 [cl-nagoya/ruri-v3](https://huggingface.co/collections/cl-nagoya/ruri-japanese-general-text-embeddings) (a Japanese sentence embedding model) converted to Core ML for on-device use on iOS, plus an iOS app comparing it against Apple's own on-device embedding model (`NLContextualEmbedding`).
 
 *(日本語版READMEはこちら: [README_ja.md](README_ja.md))*
