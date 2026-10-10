@@ -1,0 +1,26 @@
+{
+  "JSTS": {
+    "metric": "spearman",
+    "score": 0.834520905589524
+  },
+  "JSICK": {
+    "metric": "spearman",
+    "score": 0.7393856318492646
+  },
+  "livedoor_news": {
+    "metric": "v_measure",
+    "score": 0.4261316723103831
+  },
+  "MewsC-16-ja": {
+    "metric": "v_measure",
+    "score": 0.29446525879390745
+  },
+  "NLP Journal title→abs": {
+    "metric": "ndcg@10",
+    "score": 0.9811684432407987
+  },
+  "JaGovFaqs-22k": {
+    "metric": "ndcg@10",
+    "score": 0.7656782962064738
+  }
+}
